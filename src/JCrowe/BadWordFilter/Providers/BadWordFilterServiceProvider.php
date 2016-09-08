@@ -34,7 +34,7 @@ class BadWordFilterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('bad-word-filter', function($app) {
+        $this->app->singleton('bad-word-filter', function($app) {
             $config = $app->make('config');
             /** @var array $defaults */
             $defaults = $config->get('bad-word-filter');
