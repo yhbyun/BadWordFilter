@@ -167,6 +167,11 @@ class BadWordFilterTest extends TestCase {
             'fucking',
             'shitty'
         ], $filter->getDirtyWordsFromString('my very fucking shitty dirty string'));
+
+        $filter = new BadWordFilter(['also_check' => ['M11']]);
+        static::assertEquals([
+            'M11',
+        ], $filter->getDirtyWordsFromString('/M11/'));
     }
 
 
