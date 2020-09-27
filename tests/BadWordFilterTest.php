@@ -171,9 +171,8 @@ class BadWordFilterTest extends TestCase {
         $filter = new BadWordFilter(['also_check' => ['M11']]);
         static::assertEquals([
             'M11',
-        ], $filter->getDirtyWordsFromString('/M11/'));
+        ], $filter->getDirtyWordsFromString('/this is (M11) string/'));
     }
-
 
     /**
      * Can parse an array and get list of dirty strings and their array key
