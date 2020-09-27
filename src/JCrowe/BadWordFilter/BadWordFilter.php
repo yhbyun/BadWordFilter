@@ -132,18 +132,15 @@ class BadWordFilter
         $wordsToTest = $this->flattenArray($this->badWords);
 
         foreach ($wordsToTest as $word) {
-
             $word = preg_quote($word);
 
             if (preg_match($this->buildRegex($word), $string, $matchedString)) {
-
-                $badWords[] = $matchedString[0];
+                $badWords[] = $matchedString[2];
             }
         }
 
         return $badWords;
     }
-
 
     /**
      * Get an array of key/value pairs of dirty keys in the $input array
